@@ -1,6 +1,6 @@
 # Actual Budget
 
-[![Deploy on Railway](https://railway.app/button.svg)](https://railway.com/deploy/actual-budget?utm_campaign=actualbudget)
+[![Deploy on Railway](https://railway.app/button.svg)](https://railway.com/deploy/actual-budget-1?utm_campaign=actualbudget)
 
 **Actual Budget** — the local-first, privacy-focused envelope budgeting app (a self-hosted YNAB alternative), now a one-click deploy. Track accounts, plan spending with envelope budgets, sync bank transactions, and keep every byte of your financial data on your own infrastructure. Deploys in one click with zero form fields.
 
