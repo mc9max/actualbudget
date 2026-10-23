@@ -19,9 +19,11 @@
 #                               PORT; nothing to remap.
 #   HOSTNAME .................. Upstream default `::` already binds every
 #                               interface, so the Railway proxy can reach it.
-#   CMD ....................... Inherited verbatim from upstream
-#                               (`sh ./bin/docker-start`); the script starts
-#                               the prebuilt server, no flags needed.
+#   No ENTRYPOINT/CMD override — the stock image's own
+#                               `/usr/bin/tini -g -- node app.js` is the
+#                               correct start (the repo-root `bin/docker-start`
+#                               is a dev-only script, absent from the published
+#                               image; overriding CMD with it crash-loops).
 #   HEALTHCHECK NONE .......... The stock image has no healthcheck; Railway's
 #                               external healthcheckPath ("/") in railway.json
 #                               is the readiness gate.
@@ -42,5 +44,3 @@ ENV ACTUAL_DATA_DIR=/data
 EXPOSE 5006
 
 LABEL org.opencontainers.image.source="https://github.com/mc9max/actualbudget"
-
-CMD ["sh", "./bin/docker-start"]
